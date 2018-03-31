@@ -129,11 +129,11 @@
                 $(document).ready(()=>{
                     setTimeout(()=>{
                         this.initHeight();
+                        this.elPosition.runStuTitle = $(".stu-title-container").offset().top+$(".title").outerHeight();
+                        this.elPosition.runStudy= $(".stu-content-container").offset().top+$(".content").outerHeight()/2;
+                        this.elPosition.runSkillTitle = $(".skills-title-container").offset().top+$(".title").outerHeight();
+                        this.elPosition.initEchart = $(".skills .content").offset().top+$(".skills .content").outerHeight()/3*2;
                     },100)
-                    this.elPosition.runStuTitle = $(".stu-title-container").offset().top+$(".title").outerHeight();
-                    this.elPosition.runStudy= $(".stu-content-container").offset().top+$(".content").outerHeight()/2;
-                    this.elPosition.runSkillTitle = $(".skills-title-container").offset().top+$(".title").outerHeight();
-                    this.elPosition.initEchart = $(".skills .content").offset().top+$(".skills .content").outerHeight()/3*2;
                 })
                 this.$emit('onmounted',this.elPosition);
             })
@@ -144,7 +144,7 @@
 <style lang="less" scoped>
     .container{
         text-align: left;
-        padding-top: 1rem;
+        // padding-top: 1rem;
         display: flex;
         justify-content: space-between;
         .title{
@@ -157,6 +157,7 @@
         .study{
             min-width: 4.5rem;
             .title{
+                margin-top: 1rem;
                 &.stu-title-enter{
                     transform: translate3d(-1rem,0,0);
                     opacity: 0;

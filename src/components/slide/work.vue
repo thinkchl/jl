@@ -49,9 +49,11 @@
         mounted(){
             this.$nextTick(()=>{
                 $(document).ready(()=>{
-                    this.initHeight();
-                    this.elPosition.runTitle = $(".title-container").offset().top;
-                    this.elPosition.runContent = $(".content-container").offset().top;
+                    setTimeout(()=>{
+                        this.initHeight();
+                        this.elPosition.runTitle = $(".title-container").offset().top;
+                        this.elPosition.runContent = $(".content-container").offset().top;
+                    },100)
                 })
                 this.$emit('onmounted',this.elPosition);
             })

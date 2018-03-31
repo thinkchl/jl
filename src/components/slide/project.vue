@@ -81,11 +81,11 @@
                 $(document).ready(()=>{
                     setTimeout(() => {
                         this.initHeight();
+                        this.elPosition.runTitle = $(".project-container .title-container").offset().top;
+                        this.elPosition.runTitle2 = $(".project-container .title-container:eq(1)").offset().top;
+                        this.elPosition.runContent = $(".project-container .content-container").offset().top;
+                        this.elPosition.runHobby = $(".project-container .hobby-container").offset().top;
                     }, 100);
-                    this.elPosition.runTitle = $(".project-container .title-container").offset().top;
-                    this.elPosition.runTitle2 = $(".project-container .title-container:eq(1)").offset().top;
-                    this.elPosition.runContent = $(".project-container .content-container").offset().top;
-                    this.elPosition.runHobby = $(".project-container .hobby-container").offset().top;
                 })
                 this.$emit('onmounted',this.elPosition);
             })
